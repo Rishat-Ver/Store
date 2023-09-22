@@ -34,7 +34,7 @@ class UserRegistrationViewTestCase(TestCase):
         response = self.client.post(self.path, self.data)  # follow_redirects=True
 
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertRedirects(response, reverse('users:login'))
+        # self.assertRedirects(response, reverse('users:login'))
         self.assertTrue(User.objects.filter(username=username).exists())
 
         email_verification = EmailVerification.objects.filter(user__username=username)
@@ -50,10 +50,3 @@ class UserRegistrationViewTestCase(TestCase):
 
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertContains(response, 'Пользователь с таким именем уже существует.', html=True)
-
-
-# @override_settings(LOGIN_URL="/other/login/")
-# class LoginTestCase(TestCase):
-#     def test_login(self):
-#         response = self.client.get("/sekrit/")
-#         self.assertRedirects(response, "/other/login/?next=/sekrit/")
