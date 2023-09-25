@@ -11,7 +11,7 @@ from django.utils.timezone import now
 class User(AbstractUser):
     image = ImageField(upload_to='users_image', null=True, blank=True)
     is_verified_email = BooleanField(default=False)
-    email = models.EmailField(unique=True, blank=False)
+    # email = models.EmailField(unique=True, blank=False)
 
 
 class EmailVerification(models.Model):
