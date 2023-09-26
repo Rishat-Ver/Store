@@ -2,10 +2,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import HttpResponseRedirect
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
-# from django.core.cache import cache
 
 from common.views import TitleMixin
 from products.models import Basket, Product, ProductCategory
+
+# from django.core.cache import cache
 
 
 class IndexView(TitleMixin, TemplateView):

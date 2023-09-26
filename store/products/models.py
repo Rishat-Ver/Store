@@ -1,13 +1,11 @@
 import stripe
 from django.conf import settings
-
 from django.db import models
 from django.db.models import (CharField, DateTimeField, DecimalField,
                               ForeignKey, ImageField, PositiveIntegerField,
                               TextField)
 
 from users.models import User
-
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
