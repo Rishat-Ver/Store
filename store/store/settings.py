@@ -56,13 +56,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.humanize',
-    'django_extensions',
 
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     "debug_toolbar",
+    'django_extensions',
 
     'products',
     'users',
@@ -233,8 +233,8 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
-# SOCIALACCOUNT_QUERY_EMAIL = True
 
+SOCIALACCOUNT_QUERY_EMAIL = True
 
 # Celery
 
